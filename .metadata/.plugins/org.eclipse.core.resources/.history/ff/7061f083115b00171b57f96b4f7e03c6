@@ -1,0 +1,20 @@
+
+public class TestEjercicio43 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int [][] scores = {
+				{3,3,4,5,6,6,7,7,7,9},
+				{1,1,2,3,5,6,6,6,7,8},
+				{2,2,3,4,5,6,7,8,9,10}
+				};		
+		int H = 10;
+		
+		Courses C = new Courses(H, scores.length);
+		
+		// Solution
+		int value  = C.solveHoursCourse(scores);
+		System.out.println("The optimal solution is " + value);
+		System.out.println(C.table2String(C.V));
+		System.out.println();					
+	}
+}

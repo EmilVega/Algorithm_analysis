@@ -1,0 +1,31 @@
+package guia4;
+
+public class Exercise1 {
+
+	public static void main(String[] args) {
+		int [] d={10,100,100,5,5,50};
+		System.out.println(d.length);
+		int r = multiplyingMat(d);
+		System.out.println(r);
+
+	}
+	
+	public static int multiplyingMat(int[] d){
+		int n = d.length-1;
+		int[][] M = new int[n-1][n];
+		for (int i=1;i<=n-2;i++){
+			M[i][i]=0;
+			for (int j=i;j<n;j++){
+				M[i][j]= Integer.MAX_VALUE;
+				for (int k=i;k<j-1;k++){
+					int aux = M[i][k]+M[k+1][j]+(d[i]*d[k+1]*d[j+1]);
+					if (aux<M[i][j]){
+						M[i][j]=aux;
+					}
+				}
+			}
+		}
+		return M[1][n-1];
+	}
+
+}

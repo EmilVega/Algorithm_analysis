@@ -1,0 +1,38 @@
+import java.util.List;
+
+public class MazeProblem {
+	private int [][] maze;
+	private int [] entrance, exit;
+	
+	public MazeProblem(int [][] maze, int [] entrance, int [] exit){
+		this.maze = maze;
+		this.entrance = entrance;
+		this.exit = exit;
+	}
+	
+	public boolean isInMaze(int [] pos){		
+		return (pos[0]>=0 && pos[0]<maze.length) && (pos[1]>=0 && pos[1]<maze[pos[0]].length);
+	}
+	
+	public void printMaze(){
+		System.out.println("MAZE:");
+		String s = "";
+		for (int i=0;i<maze.length;i++){
+			for (int j=0;j<maze[i].length;j++){
+				if (i==entrance[0] && j==entrance[1]){
+					s += "E ";
+				}else if (i==exit[0] && j==exit[1]){
+					s += "S ";
+				}else{
+					s += maze[i][j] + " ";
+				}
+			}
+			s += "\n";
+		}
+		System.out.println(s);
+	}
+	
+	public boolean Maze(List<Integer> p, int [] pos){
+		return false;
+	}		
+}
